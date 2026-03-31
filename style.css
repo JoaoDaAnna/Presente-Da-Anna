@@ -1,0 +1,79 @@
+body {
+    background-color: #f8d9e6;
+}
+#titulo{
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    width: 600px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fbe7f0;
+}
+#titulo h1{
+    font-size: 50px;
+    font-family: 'Great Vibes', cursive;
+    color:#5a2a3a;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+#botaoAmor{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    background-color: #ff8fb1;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+#msg{
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+    transition: 0.5s;
+    opacity: 0;
+}
+#foto{
+
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: #ff6f9c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.coracao{
+    position: fixed;
+    top: -20px;
+    font-size: 50px;
+    animation: cair 5s linear forwards;
+}
+@keyframes cair{
+    0%{
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+#contador{
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+}

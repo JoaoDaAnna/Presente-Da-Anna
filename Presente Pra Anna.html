@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Eu Te Amo Mãe Da Minha Maite</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="titulo">
+        <h1>Para A Mãe Da Minha Maite.</h1>
+        <button id="botaoAmor" onclick="cliqueAqui()">Clique Aqui Meu Amor!</button>
+        <p id="msg">Eu Te Vivo Princesa!</p>
+        <img id="foto" src="foto2.jpg">
+
+        <p id="contador"></p>
+    </div>
+    
+    
+    <audio id="musica" src="musica.mp3" ></audio>
+    
+
+    <script>
+
+        let dataNamoro = new Date("2024-11-17T22:20:00");
+        
+        function cliqueAqui() {
+        document.getElementById("foto").style.opacity = "1";
+        document.getElementById("msg").style.opacity = "1";
+        criarCoracao();
+        
+        let audio = document.getElementById("musica");
+        audio.play();
+
+
+        for(let i = 0; i < 40; i++){
+        setTimeout(criarCoracao, i * 250);
+        criarCoracao();
+        }
+
+
+        }
+        function criarCoracao(){
+        let coracao = document.createElement("span");
+        coracao.innerText = "💗";
+        coracao.style.left = Math.random() * window.innerWidth + "px";
+        coracao.classList.add("coracao");
+        
+        document.body.appendChild(coracao);
+
+        setTimeout(() => {
+        coracao.remove();
+        }, 7000);
+
+        coracao.style.fontSize = Math.random() * 20 + 30 + "px";
+        coracao.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            function atualizarContador() {
+            let agora = new Date();
+            let diferenca = agora - dataNamoro;
+
+            let segundosTotais = Math.floor(diferenca / 1000);
+
+            let dias = Math.floor(segundosTotais / 86400);
+            let horas = Math.floor((segundosTotais % 86400) / 3600);
+            let minutos = Math.floor((segundosTotais % 3600) / 60);
+            let segundos = segundosTotais % 60;
+
+            document.getElementById("contador").innerText =
+                "Eu Te Amo Há: " + dias + " dias, " +
+                horas + " horas, " +
+                minutos + " minutos e " +
+                segundos + " segundos ❤️";
+    }
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+
+
+    }
+
+
+    let fotos = ["foto2.jpg", "foto3.jpg", "foto4.jpg", "foto5.jpg", "foto6.jpg", "foto7.jpg", "foto8.jpg"];
+    let index = 0;
+
+    function trocarFoto(){
+        index++;
+
+        if(index >= fotos.length){
+            index = 0;
+        }
+
+        document.getElementById("foto").src = fotos[index];
+        
+    }
+        setInterval(trocarFoto, 1000);
+     
+        let player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player');
+        }
+
+
+
+    </script>
+
+</body>
+</html>
